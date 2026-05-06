@@ -8,7 +8,7 @@ class DragDropSection:
     def __init__(self, page: Page) -> None:
         self._page = page
         self.draggable_item: Locator = page.locator(".drag-item").first
-        self.drop_zone: Locator = page.locator(".drop-zone")
+        self.drop_zone: Locator = page.locator("#drag-target")
 
     @allure_step("Drag item to drop zone")
     def drag_to_drop_zone(self) -> None:

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Callable, TypeVar, cast
 
-import allure  # type: ignore[import-untyped]
+import allure
 
 F = TypeVar("F", bound=Callable[..., object])
 

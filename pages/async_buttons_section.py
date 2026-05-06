@@ -7,18 +7,23 @@ from playwright.sync_api import Locator, Page
 class AsyncButtonsSection:
     def __init__(self, page: Page) -> None:
         self._page = page
-        self.load_button: Locator = page.get_by_role("button", name="Load data")
-        self.success_message: Locator = page.locator("text=Success")
-        self.error_message: Locator = page.locator("text=Error")
+        self.load_button: Locator = page.locator("#btn-async-success")
+        self.error_button: Locator = page.locator("#btn-async-error")
+        self.reset_button: Locator = page.locator("#btn-async-reset")
+        self.status: Locator = page.locator("#async-status")
 
     @allure_step("Click async load button")
     def click_load(self) -> None:
         self.load_button.click()
 
-    @allure_step("Get async success text")
-    def get_success_text(self) -> str:
-        return self.success_message.inner_text()
+    @allure_step("Click async error button")
+    def click_error(self) -> None:
+        self.error_button.click()
 
-    @allure_step("Get async error text")
-    def get_error_text(self) -> str:
-        return self.error_message.inner_text()
+    @allure_step("Reset async button states")
+    def click_reset(self) -> None:
+        self.reset_button.click()
+
+    @allure_step("Get async status text")
+    def get_status_text(self) -> str:
+        return self.status.inner_text()

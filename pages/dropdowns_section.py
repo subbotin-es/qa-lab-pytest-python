@@ -9,7 +9,7 @@ from playwright.sync_api import Locator, Page
 class DropdownsSection:
     def __init__(self, page: Page) -> None:
         self._page = page
-        self.single_select: Locator = page.get_by_role("combobox", name="Choose an option")
+        self.single_select: Locator = page.locator('select').first
         self.multi_select: Locator = page.locator('select[multiple]')
 
     @allure_step("Select single option: {value}")

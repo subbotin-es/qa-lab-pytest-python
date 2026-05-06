@@ -7,8 +7,8 @@ from playwright.sync_api import Locator, Page
 class InputsSection:
     def __init__(self, page: Page) -> None:
         self._page = page
-        self.text_input: Locator = page.locator('input[type="text"]')
-        self.number_input: Locator = page.locator('input[type="number"]').first
+        self.text_input: Locator = page.locator('input[placeholder="Enter text"]')
+        self.number_input: Locator = page.locator('input[type="number"]').nth(1)
         self.date_input: Locator = page.locator('input[type="date"]')
         self.search_input: Locator = page.locator('input[type="search"]')
         self.url_input: Locator = page.locator('input[type="url"]')

@@ -7,8 +7,8 @@ from playwright.sync_api import Locator, Page
 class DynamicVisibilitySection:
     def __init__(self, page: Page) -> None:
         self._page = page
-        self.toggle_checkbox: Locator = page.get_by_role("checkbox", name="Show details")
-        self.dynamic_panel: Locator = page.locator("#dynamic-panel")
+        self.toggle_checkbox: Locator = page.locator("#show-secret-panel")
+        self.dynamic_panel: Locator = page.locator("#secret-panel")
 
     @allure_step("Toggle dynamic visibility checkbox")
     def toggle_panel(self) -> None:

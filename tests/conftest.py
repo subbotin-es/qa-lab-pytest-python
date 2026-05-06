@@ -2,7 +2,7 @@ import os
 from typing import Any, Generator
 
 import pytest
-import allure  # type: ignore[import-untyped]
+import allure
 from playwright.sync_api import Browser, BrowserContext, Page, Playwright, sync_playwright
 from pages.qa_lab_page import QALabPage
 

@@ -2,8 +2,9 @@ from __future__ import annotations
 
 from typing import cast
 
-from helpers.allure_helpers import allure_step
 from playwright.sync_api import Locator, Page
+
+from helpers.allure_helpers import allure_step
 
 
 class DropdownsSection:

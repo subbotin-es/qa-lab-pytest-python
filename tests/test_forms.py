@@ -1,5 +1,5 @@
-import pytest
 import allure
+import pytest
 from playwright.sync_api import Page, expect
 
 from data.form_data import RegistrationFormData
@@ -7,7 +7,7 @@ from pages.forms_section import FormsSection
 from pages.qa_lab_page import QALabPage
 
 
-@allure.feature("Forms")  # type: ignore[misc]
+@allure.feature("Forms")
 class TestForms:
 
     @allure.story("Registration")  # type: ignore[misc]

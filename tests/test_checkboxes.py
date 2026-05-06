@@ -1,12 +1,12 @@
-import pytest
 import allure
+import pytest
 from playwright.sync_api import Page, expect
 
 from pages.checkboxes_section import CheckboxesSection
 from pages.qa_lab_page import QALabPage
 
 
-@allure.feature("Checkboxes")  # type: ignore[misc]
+@allure.feature("Checkboxes")
 class TestCheckboxes:
 
     @allure.story("Agree Checkbox")  # type: ignore[misc]

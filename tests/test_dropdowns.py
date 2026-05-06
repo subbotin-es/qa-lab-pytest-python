@@ -1,12 +1,12 @@
-import pytest
 import allure
+import pytest
 from playwright.sync_api import Page, expect
 
 from pages.dropdowns_section import DropdownsSection
 from pages.qa_lab_page import QALabPage
 
 
-@allure.feature("Dropdowns")  # type: ignore[misc]
+@allure.feature("Dropdowns")
 class TestDropdowns:
 
     @allure.story("Single Select")  # type: ignore[misc]

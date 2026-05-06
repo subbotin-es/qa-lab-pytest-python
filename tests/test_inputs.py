@@ -1,12 +1,12 @@
-import pytest
 import allure
+import pytest
 from playwright.sync_api import Page, expect
 
 from pages.inputs_section import InputsSection
 from pages.qa_lab_page import QALabPage
 
 
-@allure.feature("Inputs")  # type: ignore[misc]
+@allure.feature("Inputs")
 class TestInputs:
 
     @allure.story("Text Input")  # type: ignore[misc]

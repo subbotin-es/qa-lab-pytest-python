@@ -1,12 +1,12 @@
-import pytest
 import allure
+import pytest
 from playwright.sync_api import Page, expect
 
 from pages.dynamic_visibility_section import DynamicVisibilitySection
 from pages.qa_lab_page import QALabPage
 
 
-@allure.feature("Dynamic Visibility")  # type: ignore[misc]
+@allure.feature("Dynamic Visibility")
 class TestDynamicVisibility:
 
     @allure.story("Panel Toggle")  # type: ignore[misc]

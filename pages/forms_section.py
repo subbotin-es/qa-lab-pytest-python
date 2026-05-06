@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-from helpers.allure_helpers import allure_step
 from playwright.sync_api import Locator, Page
 
 from data.form_data import RegistrationFormData
+from helpers.allure_helpers import allure_step
 
 
 class FormsSection:

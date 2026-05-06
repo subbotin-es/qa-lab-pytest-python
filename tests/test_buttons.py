@@ -1,12 +1,12 @@
-import pytest
 import allure
+import pytest
 from playwright.sync_api import Page, expect
 
 from pages.buttons_section import ButtonsSection
 from pages.qa_lab_page import QALabPage
 
 
-@allure.feature("Buttons")  # type: ignore[misc]
+@allure.feature("Buttons")
 class TestButtons:
 
     @allure.story("Primary Button")  # type: ignore[misc]

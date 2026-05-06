@@ -1,12 +1,12 @@
-import pytest
 import allure
-from playwright.sync_api import Page, expect
+import pytest
+from playwright.sync_api import Page
 
 from pages.iframe_section import IFrameSection
 from pages.qa_lab_page import QALabPage
 
 
-@allure.feature("IFrames")  # type: ignore[misc]
+@allure.feature("IFrames")
 class TestIFrames:
 
     @allure.story("IFrame Content")  # type: ignore[misc]

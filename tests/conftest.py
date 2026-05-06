@@ -1,9 +1,10 @@
 import os
 from typing import Any, Generator
 
-import pytest
 import allure
+import pytest
 from playwright.sync_api import Browser, BrowserContext, Page, Playwright, sync_playwright
+
 from pages.qa_lab_page import QALabPage
 
 BASE_URL = os.environ.get("BASE_URL", "https://subbotin.es")
@@ -45,7 +46,9 @@ def qa_lab(page: Page) -> QALabPage:
 
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
-def pytest_runtest_makereport(item: Any, call: pytest.CallInfo[Any]) -> Generator[None, None, None]:
+def pytest_runtest_makereport(
+    item: pytest.Item, call: pytest.CallInfo[Any]
+) -> Generator[None, None, None]:
     outcome: Any = yield
     rep = outcome.get_result()
     if rep.when == "call" and rep.failed:

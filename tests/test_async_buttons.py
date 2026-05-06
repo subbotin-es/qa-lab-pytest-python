@@ -1,12 +1,12 @@
-import pytest
 import allure
+import pytest
 from playwright.sync_api import Page, expect
 
 from pages.async_buttons_section import AsyncButtonsSection
 from pages.qa_lab_page import QALabPage
 
 
-@allure.feature("Async Buttons")  # type: ignore[misc]
+@allure.feature("Async Buttons")
 class TestAsyncButtons:
 
     @allure.story("Load Button")  # type: ignore[misc]

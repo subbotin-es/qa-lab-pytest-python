@@ -1,12 +1,12 @@
-import pytest
 import allure
+import pytest
 from playwright.sync_api import Page, expect
 
 from pages.modals_section import ModalsSection
 from pages.qa_lab_page import QALabPage
 
 
-@allure.feature("Modals")  # type: ignore[misc]
+@allure.feature("Modals")
 class TestModals:
 
     @allure.story("Open Modal")  # type: ignore[misc]

@@ -1,12 +1,12 @@
-import pytest
 import allure
+import pytest
 from playwright.sync_api import Page, expect
 
-from pages.tables_section import TablesSection
 from pages.qa_lab_page import QALabPage
+from pages.tables_section import TablesSection
 
 
-@allure.feature("Tables")  # type: ignore[misc]
+@allure.feature("Tables")
 class TestTables:
 
     @allure.story("Row Count")  # type: ignore[misc]

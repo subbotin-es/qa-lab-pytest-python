@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+from playwright.sync_api import FrameLocator, Locator, Page
+from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
+
 from helpers.allure_helpers import allure_step
-from playwright.sync_api import FrameLocator, Locator, Page, TimeoutError as PlaywrightTimeoutError
 
 
 class IFrameSection:

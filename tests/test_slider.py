@@ -1,12 +1,12 @@
-import pytest
 import allure
+import pytest
 from playwright.sync_api import Page, expect
 
-from pages.slider_section import SliderSection
 from pages.qa_lab_page import QALabPage
+from pages.slider_section import SliderSection
 
 
-@allure.feature("Slider")  # type: ignore[misc]
+@allure.feature("Slider")
 class TestSlider:
 
     @allure.story("Value Change")  # type: ignore[misc]

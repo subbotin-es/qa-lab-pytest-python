@@ -1,7 +1,8 @@
 from __future__ import annotations
 
-from helpers.allure_helpers import allure_step
 from playwright.sync_api import Locator, Page
+
+from helpers.allure_helpers import allure_step
 
 
 class CheckboxesSection:
@@ -10,7 +11,10 @@ class CheckboxesSection:
         # Look for checkboxes in main content, not navigation
         all_checkboxes = page.locator('input[type="checkbox"]:not(#nav-toggle)')
         self.agree_checkbox: Locator = all_checkboxes.first
-        self.notifications_checkbox: Locator = all_checkboxes.nth(1) if all_checkboxes.count() > 1 else page.locator('input[type="checkbox"][disabled]')
+        self.notifications_checkbox: Locator = (
+            all_checkboxes.nth(1) if all_checkboxes.count() > 1
+            else page.locator('input[type="checkbox"][disabled]')
+        )
         self.disabled_checkbox: Locator = page.locator('input[type="checkbox"][disabled]')
 
     @allure_step("Check agree checkbox")

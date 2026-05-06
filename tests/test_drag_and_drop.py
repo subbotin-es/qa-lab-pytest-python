@@ -1,12 +1,12 @@
-import pytest
 import allure
+import pytest
 from playwright.sync_api import Page, expect
 
 from pages.drag_drop_section import DragDropSection
 from pages.qa_lab_page import QALabPage
 
 
-@allure.feature("Drag & Drop")  # type: ignore[misc]
+@allure.feature("Drag & Drop")
 class TestDragDrop:
 
     @allure.story("Item Drag")  # type: ignore[misc]

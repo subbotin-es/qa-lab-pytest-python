@@ -11,8 +11,10 @@ on:
 jobs:
   test:
     name: Run Pytest Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 30
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v4

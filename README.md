@@ -121,7 +121,7 @@ This project is intentionally comparable to [Stack 1 (Playwright + TypeScript)](
 |---|---|---|
 | 1 | Playwright + TypeScript | coming soon |
 | 2 | **Pytest + Python** ← this | [qa-lab-pytest-python](https://github.com/EvgeniiSubbotin/qa-lab-pytest-python) |
-| 3 | Selenium + Java + TestNG | coming soon |
+| 3 | Selenium + Java + TestNG | [qa-lab-selenium-java](https://github.com/subbotin-es/qa-lab-selenium-java)
 | 4 | Cypress + JavaScript | coming soon |
 | 5 | Playwright + C# + NUnit | [qa-lab-playwright-csharp](https://github.com/subbotin-es/qa-lab-playwright-csharp) 
 

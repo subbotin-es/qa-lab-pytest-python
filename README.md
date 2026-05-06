@@ -3,7 +3,7 @@
 > **Portfolio artefact #2 — Cross-Stack QA Series**
 > Same target app, different stacks — comparative analysis across automation ecosystems.
 
-[![CI](https://github.com/EvgeniiSubbotin/qa-lab-pytest-python/actions/workflows/ci.yml/badge.svg)](https://github.com/EvgeniiSubbotin/qa-lab-pytest-python/actions/workflows/ci.yml)
+[![CI](https://github.com/subbotin-es/qa-lab-pytest-python/actions/workflows/ci.yml/badge.svg)](https://github.com/subbotin-es/qa-lab-pytest-python/actions/workflows/ci.yml)
 
 ---
 
@@ -41,7 +41,7 @@ An isolated Pytest + Python automation framework targeting the [QA Lab live envi
 
 ## Live Allure Report
 
-[https://EvgeniiSubbotin.github.io/qa-lab-pytest-python/allure](https://EvgeniiSubbotin.github.io/qa-lab-pytest-python/allure)
+[https://subbotin-es.github.io/qa-lab-pytest-python/allure](https://subbotin-es.github.io/qa-lab-pytest-python/allure)
 
 ---
 
@@ -90,7 +90,7 @@ allure open allure-report
 
 ## Python vs TypeScript — Key Differences
 
-This project is intentionally comparable to [Stack 1 (Playwright + TypeScript)](https://github.com/EvgeniiSubbotin/qa-lab-playwright-ts). Same target, different paradigm:
+This project is intentionally comparable to [Stack 1 (Playwright + TypeScript)](https://github.com/subbotin-es/qa-lab-playwright-ts). Same target, different paradigm:
 
 | Aspect | Playwright TS (Stack 1) | Pytest Python (Stack 2) |
 |---|---|---|

@@ -90,7 +90,7 @@ allure open allure-report
 
 ## Python vs TypeScript — Key Differences
 
-This project is intentionally comparable to [Stack 1 (Playwright + TypeScript)](https://github.com/subbotin-es/qa-lab-playwright-ts). Same target, different paradigm:
+This project is intentionally comparable to [Stack 1 (Playwright + TypeScript)](https://github.com/subbotin-es/qa-lab-playwright). Same target, different paradigm:
 
 | Aspect | Playwright TS (Stack 1) | Pytest Python (Stack 2) |
 |---|---|---|

@@ -71,3 +71,55 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./allure-report
           destination_dir: allure
+
+  performance:
+    name: Locust SLO Check
+    runs-on: ubuntu-latest
+    needs: test          # run after pytest passes
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install -r requirements-dev.txt
+
+      - name: Run Locust smoke test (headless)
+        run: |
+          locust \
+            -f performance/locust/locustfiles/slo_smoke.py \
+            --headless \
+            -u 5 -r 1 \
+            -t 30s \
+            --html performance/locust/smoke-report.html \
+            --host https://subbotin.es \
+            --exit-code-on-error 1
+        env:
+          BASE_URL: https://subbotin.es
+
+      - name: Run Locust baseline test (main only)
+        if: github.ref == 'refs/heads/main'
+        run: |
+          locust \
+            -f performance/locust/locustfiles/slo_baseline.py \
+            --headless \
+            -u 10 -r 2 \
+            -t 60s \
+            --html performance/locust/baseline-report.html \
+            --host https://subbotin.es \
+            --exit-code-on-error 1
+
+      - name: Upload Locust HTML reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: locust-reports
+          path: performance/locust/*.html
+          retention-days: 14

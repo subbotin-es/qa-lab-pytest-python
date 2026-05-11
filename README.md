@@ -73,6 +73,45 @@ allure open allure-report
 
 ---
 
+## Performance Testing (Locust)
+
+SLO compliance tests run automatically after every pytest suite pass in CI.
+Target: `https://subbotin.es` — static site served by S3 + CloudFront.
+
+**Smoke baseline results (5 VU · 30 s · local run):**
+
+| Metric | Result | SLO | Status |
+|---|---|---|---|
+| p50 | 24 ms | — | — |
+| p95 | 38 ms | ≤ 500 ms | ✅ |
+| p99 | 650 ms | ≤ 1000 ms | ✅ |
+| Error rate | 0 % | ≤ 1 % | ✅ |
+
+p99 spike is a CloudFront cold edge miss — warm cache requests stay consistently ≤ 40 ms.
+See [Findings.md](Findings.md) for full analysis, assumptions, and limitations.
+
+**Run performance tests locally:**
+
+```powershell
+# Smoke (headless, 5 VU, 30 s)
+locust -f performance/locust/locustfiles/slo_smoke.py `
+  --headless -u 5 -r 1 -t 30s --host https://subbotin.es
+
+# Baseline (headless, 10 VU, 60 s)
+locust -f performance/locust/locustfiles/slo_baseline.py `
+  --headless -u 10 -r 2 -t 60s --host https://subbotin.es
+
+# Interactive Web UI at http://localhost:8089
+locust -f performance/locust/locustfiles/slo_smoke.py --host https://subbotin.es
+```
+
+**Links:**
+- [Locust locustfiles](performance/locust/locustfiles/) — smoke, baseline, CDN cold/warm
+- [Performance Findings](Findings.md) — approach, results, assumptions, limitations
+- CI artifact: `locust-reports` — HTML reports, 14-day retention (Actions tab → run → Artifacts)
+
+---
+
 ## Tech Stack
 
 | Layer | Technology | Version |
@@ -81,6 +120,7 @@ allure open allure-report
 | Browser automation | playwright-python | 1.44+ |
 | Reporting | allure-pytest | 2.13+ |
 | Parallelism | pytest-xdist | 3.x |
+| Performance testing | Locust | 2.28+ |
 | Type checking | mypy | 1.x |
 | Linting | ruff | 0.4+ |
 | CI/CD | GitHub Actions | — |
